@@ -5842,7 +5842,7 @@ typedef struct {
 /** Peripheral PTF base pointer */
 #define PTF                                      ((GPIO_Type *)PTF_BASE)
 /** Array initializer of GPIO peripheral base pointers */
-#define GPIO_BASES                               { PTA, PTB, PTC, PTD, PTE, PTF }
+#define GPIO_BASE_PTRS                           { PTA, PTB, PTC, PTD, PTE, PTF }
 
 /**
  * @}
@@ -8599,7 +8599,7 @@ typedef struct {
 /** Peripheral PORTF base pointer */
 #define PORTF                                    ((PORT_Type *)PORTF_BASE)
 /** Array initializer of PORT peripheral base pointers */
-#define PORT_BASES                               { PORTA, PORTB, PORTC, PORTD, PORTE, PORTF }
+#define PORT_BASE_PTRS                           { PORTA, PORTB, PORTC, PORTD, PORTE, PORTF }
 
 /**
  * @}

@@ -8509,14 +8509,24 @@ typedef struct {
 /* PCR Bit Fields */
 #define PORT_PCR_PS_MASK                         0x1u
 #define PORT_PCR_PS_SHIFT                        0
+#define PORT_PCR_PS(x)                          (((uint32_t)(((uint32_t)(x)) << PORT_PCR_PS_SHIFT)) & PORT_PCR_PS_MASK)
+
 #define PORT_PCR_PE_MASK                         0x2u
 #define PORT_PCR_PE_SHIFT                        1
+#define PORT_PCR_PE(x)                          (((uint32_t)(((uint32_t)(x)) << PORT_PCR_PE_SHIFT)) & PORT_PCR_PE_MASK)
+
 #define PORT_PCR_SRE_MASK                        0x4u
 #define PORT_PCR_SRE_SHIFT                       2
+#define PORT_PCR_SRE(x)                          (((uint32_t)(((uint32_t)(x)) << PORT_PCR_SRE_SHIFT)) & PORT_PCR_SRE_MASK)
+
 #define PORT_PCR_PFE_MASK                        0x10u
 #define PORT_PCR_PFE_SHIFT                       4
+#define PORT_PCR_PFE(x)                          (((uint32_t)(((uint32_t)(x)) << PORT_PCR_PFE_SHIFT)) & PORT_PCR_PFE_MASK)
+
 #define PORT_PCR_ODE_MASK                        0x20u
 #define PORT_PCR_ODE_SHIFT                       5
+#define PORT_PCR_ODE(x)                          (((uint32_t)(((uint32_t)(x)) << PORT_PCR_ODE_SHIFT)) & PORT_PCR_ODE_MASK)
+
 #define PORT_PCR_DSE_MASK                        0x40u
 #define PORT_PCR_DSE_SHIFT                       6
 /*! DSE - Drive Strength Enable

@@ -57,7 +57,7 @@
  */
 
 #include <stdint.h>
-#include "MK70F12.h"
+#include "fsl_device_registers.h"
 
 #define DISABLE_WDOG    1
 
@@ -126,6 +126,7 @@ void SystemInit (void) {
   WDOG->STCTRLH = (uint16_t)0x01D2u;
 #endif /* (DISABLE_WDOG) */
 
+#if 0
   /* System clock initialization */
 #if (CLOCK_SETUP == 0)
   /* SIM_SCGC5: PORTA=1 */
@@ -259,6 +260,7 @@ void SystemInit (void) {
   while((MCG->S & 0x0CU) != 0x08U) {    /* Wait until external reference clock is selected as MCG output */
   }
 #endif /* (CLOCK_SETUP == 2) */
+#endif
 }
 
 /* ----------------------------------------------------------------------------

@@ -783,7 +783,7 @@ uint32_t CLOCK_GetPll0Freq(void)
         mcgpll0vdiv = ((uint8_t)FSL_FEATURE_MCG_PLL_VDIV_BASE + MCG_C6_VDIV0_VAL);
         mcgpll0clk *= (uint32_t)mcgpll0vdiv;
 
-        freq = mcgpll0clk;
+        freq = mcgpll0clk / 2u;
     }
 
     return freq;

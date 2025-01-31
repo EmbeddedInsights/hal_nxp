@@ -1079,7 +1079,7 @@
 /* @brief Maximum PLL external reference divider value (max. value of register bit field C5[PRVDIV]). */
 #define FSL_FEATURE_MCG_PLL_PRDIV_MAX (24)
 /* @brief VCO divider base value (multiply factor of register bit field C6[VDIV] zero value). */
-#define FSL_FEATURE_MCG_PLL_VDIV_BASE (24)
+#define FSL_FEATURE_MCG_PLL_VDIV_BASE (16)
 /* @brief PLL reference clock low range. OSCCLK/PLL_R. */
 #define FSL_FEATURE_MCG_PLL_REF_MIN (2000000)
 /* @brief PLL reference clock high range. OSCCLK/PLL_R. */

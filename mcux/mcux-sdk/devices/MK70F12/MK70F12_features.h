@@ -72,20 +72,19 @@
 
 /* SOC module features */
 
-#if defined(CPU_MK64FN1M0CAJ12) || defined(CPU_MK64FN1M0VDC12) || defined(CPU_MK64FN1M0VLQ12) || defined(CPU_MK64FN1M0VMD12) || \
-    defined(CPU_MK64FX512VDC12) || defined(CPU_MK64FX512VLQ12) || defined(CPU_MK64FX512VMD12)
+#if defined(CPU_MK70FN1M0VMJ12)
     /* @brief ADC16 availability on the SoC. */
-    #define FSL_FEATURE_SOC_ADC16_COUNT (2)
+    #define FSL_FEATURE_SOC_ADC16_COUNT (4)
     /* @brief AIPS availability on the SoC. */
     #define FSL_FEATURE_SOC_AIPS_COUNT (2)
     /* @brief AXBS availability on the SoC. */
     #define FSL_FEATURE_SOC_AXBS_COUNT (1)
     /* @brief FLEXCAN availability on the SoC. */
-    #define FSL_FEATURE_SOC_FLEXCAN_COUNT (1)
+    #define FSL_FEATURE_SOC_FLEXCAN_COUNT (2)
     /* @brief MMCAU availability on the SoC. */
     #define FSL_FEATURE_SOC_MMCAU_COUNT (1)
     /* @brief CMP availability on the SoC. */
-    #define FSL_FEATURE_SOC_CMP_COUNT (3)
+    #define FSL_FEATURE_SOC_CMP_COUNT (4)
     /* @brief CMT availability on the SoC. */
     #define FSL_FEATURE_SOC_CMT_COUNT (1)
     /* @brief CRC availability on the SoC. */
@@ -95,7 +94,7 @@
     /* @brief EDMA availability on the SoC. */
     #define FSL_FEATURE_SOC_EDMA_COUNT (1)
     /* @brief DMAMUX availability on the SoC. */
-    #define FSL_FEATURE_SOC_DMAMUX_COUNT (1)
+    #define FSL_FEATURE_SOC_DMAMUX_COUNT (2)
     /* @brief DSPI availability on the SoC. */
     #define FSL_FEATURE_SOC_DSPI_COUNT (3)
     /* @brief ENET availability on the SoC. */
@@ -162,95 +161,8 @@
     #define FSL_FEATURE_SOC_VREF_COUNT (1)
     /* @brief WDOG availability on the SoC. */
     #define FSL_FEATURE_SOC_WDOG_COUNT (1)
-#elif defined(CPU_MK64FN1M0VLL12) || defined(CPU_MK64FX512VLL12)
-    /* @brief ADC16 availability on the SoC. */
-    #define FSL_FEATURE_SOC_ADC16_COUNT (2)
-    /* @brief AIPS availability on the SoC. */
-    #define FSL_FEATURE_SOC_AIPS_COUNT (2)
-    /* @brief AXBS availability on the SoC. */
-    #define FSL_FEATURE_SOC_AXBS_COUNT (1)
-    /* @brief FLEXCAN availability on the SoC. */
-    #define FSL_FEATURE_SOC_FLEXCAN_COUNT (1)
-    /* @brief MMCAU availability on the SoC. */
-    #define FSL_FEATURE_SOC_MMCAU_COUNT (1)
-    /* @brief CMP availability on the SoC. */
-    #define FSL_FEATURE_SOC_CMP_COUNT (3)
-    /* @brief CMT availability on the SoC. */
-    #define FSL_FEATURE_SOC_CMT_COUNT (1)
-    /* @brief CRC availability on the SoC. */
-    #define FSL_FEATURE_SOC_CRC_COUNT (1)
-    /* @brief DAC availability on the SoC. */
-    #define FSL_FEATURE_SOC_DAC_COUNT (1)
-    /* @brief EDMA availability on the SoC. */
-    #define FSL_FEATURE_SOC_EDMA_COUNT (1)
-    /* @brief DMAMUX availability on the SoC. */
-    #define FSL_FEATURE_SOC_DMAMUX_COUNT (1)
-    /* @brief DSPI availability on the SoC. */
-    #define FSL_FEATURE_SOC_DSPI_COUNT (3)
-    /* @brief ENET availability on the SoC. */
-    #define FSL_FEATURE_SOC_ENET_COUNT (1)
-    /* @brief EWM availability on the SoC. */
-    #define FSL_FEATURE_SOC_EWM_COUNT (1)
-    /* @brief FB availability on the SoC. */
-    #define FSL_FEATURE_SOC_FB_COUNT (1)
-    /* @brief FMC availability on the SoC. */
-    #define FSL_FEATURE_SOC_FMC_COUNT (1)
-    /* @brief FTFE availability on the SoC. */
-    #define FSL_FEATURE_SOC_FTFE_COUNT (1)
-    /* @brief FTM availability on the SoC. */
-    #define FSL_FEATURE_SOC_FTM_COUNT (4)
-    /* @brief GPIO availability on the SoC. */
-    #define FSL_FEATURE_SOC_GPIO_COUNT (5)
-    /* @brief I2C availability on the SoC. */
-    #define FSL_FEATURE_SOC_I2C_COUNT (3)
-    /* @brief I2S availability on the SoC. */
-    #define FSL_FEATURE_SOC_I2S_COUNT (1)
-    /* @brief LLWU availability on the SoC. */
-    #define FSL_FEATURE_SOC_LLWU_COUNT (1)
-    /* @brief LPTMR availability on the SoC. */
-    #define FSL_FEATURE_SOC_LPTMR_COUNT (1)
-    /* @brief MCG availability on the SoC. */
-    #define FSL_FEATURE_SOC_MCG_COUNT (1)
-    /* @brief MCM availability on the SoC. */
-    #define FSL_FEATURE_SOC_MCM_COUNT (1)
-    /* @brief SYSMPU availability on the SoC. */
-    #define FSL_FEATURE_SOC_SYSMPU_COUNT (1)
-    /* @brief OSC availability on the SoC. */
-    #define FSL_FEATURE_SOC_OSC_COUNT (1)
-    /* @brief PDB availability on the SoC. */
-    #define FSL_FEATURE_SOC_PDB_COUNT (1)
-    /* @brief PIT availability on the SoC. */
-    #define FSL_FEATURE_SOC_PIT_COUNT (1)
-    /* @brief PMC availability on the SoC. */
-    #define FSL_FEATURE_SOC_PMC_COUNT (1)
-    /* @brief PORT availability on the SoC. */
-    #define FSL_FEATURE_SOC_PORT_COUNT (5)
-    /* @brief RCM availability on the SoC. */
-    #define FSL_FEATURE_SOC_RCM_COUNT (1)
-    /* @brief RFSYS availability on the SoC. */
-    #define FSL_FEATURE_SOC_RFSYS_COUNT (1)
-    /* @brief RFVBAT availability on the SoC. */
-    #define FSL_FEATURE_SOC_RFVBAT_COUNT (1)
-    /* @brief RNG availability on the SoC. */
-    #define FSL_FEATURE_SOC_RNG_COUNT (1)
-    /* @brief RTC availability on the SoC. */
-    #define FSL_FEATURE_SOC_RTC_COUNT (1)
-    /* @brief SDHC availability on the SoC. */
-    #define FSL_FEATURE_SOC_SDHC_COUNT (1)
-    /* @brief SIM availability on the SoC. */
-    #define FSL_FEATURE_SOC_SIM_COUNT (1)
-    /* @brief SMC availability on the SoC. */
-    #define FSL_FEATURE_SOC_SMC_COUNT (1)
-    /* @brief UART availability on the SoC. */
-    #define FSL_FEATURE_SOC_UART_COUNT (5)
-    /* @brief USB availability on the SoC. */
-    #define FSL_FEATURE_SOC_USB_COUNT (1)
-    /* @brief USBDCD availability on the SoC. */
-    #define FSL_FEATURE_SOC_USBDCD_COUNT (1)
-    /* @brief VREF availability on the SoC. */
-    #define FSL_FEATURE_SOC_VREF_COUNT (1)
-    /* @brief WDOG availability on the SoC. */
-    #define FSL_FEATURE_SOC_WDOG_COUNT (1)
+#else
+#error "unknown cpu"
 #endif
 
 /* ADC16 module features */

@@ -315,6 +315,7 @@ typedef enum _clock_name
 
 } clock_name_t;
 
+#if 0
 /*! @brief USB clock source definition. */
 typedef enum _clock_usb_src
 {
@@ -322,6 +323,7 @@ typedef enum _clock_usb_src
     kCLOCK_UsbSrcIrc48M = SIM_SOPT2_USBSRC(1U) | SIM_SOPT2_PLLFLLSEL(3U), /*!< Use IRC48M.    */
     kCLOCK_UsbSrcExt    = SIM_SOPT2_USBSRC(0U)                            /*!< Use USB_CLKIN. */
 } clock_usb_src_t;
+#endif
 
 /*------------------------------------------------------------------------------
 
@@ -764,6 +766,7 @@ static inline void CLOCK_SetRtcClkOutClock(uint32_t src)
     SIM->SOPT2 = ((SIM->SOPT2 & ~SIM_SOPT2_RTCCLKOUTSEL_MASK) | SIM_SOPT2_RTCCLKOUTSEL(src));
 }
 
+#if 0
 /*! @brief Enable USB FS clock.
  *
  * @param src  USB FS clock source.
@@ -781,6 +784,7 @@ static inline void CLOCK_DisableUsbfs0Clock(void)
 {
     CLOCK_DisableClock(kCLOCK_Usbfs0);
 }
+#endif
 
 /*!
  * @brief System clock divider

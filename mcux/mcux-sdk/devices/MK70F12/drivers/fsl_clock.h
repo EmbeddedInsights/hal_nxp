@@ -699,7 +699,7 @@ static inline void CLOCK_SetEr32kClock(uint32_t src)
  */
 static inline void CLOCK_SetSdhc0Clock(uint32_t src)
 {
-    SIM->SOPT2 = ((SIM->SOPT2 & ~SIM_SOPT2_SDHCSRC_MASK) | SIM_SOPT2_SDHCSRC(src));
+    SIM->SOPT2 = ((SIM->SOPT2 & ~SIM_SOPT2_ESDHCSRC_MASK) | SIM_SOPT2_ESDHCSRC(src));
 }
 
 /*!
@@ -712,6 +712,7 @@ static inline void CLOCK_SetEnetTime0Clock(uint32_t src)
     SIM->SOPT2 = ((SIM->SOPT2 & ~SIM_SOPT2_TIMESRC_MASK) | SIM_SOPT2_TIMESRC(src));
 }
 
+#if 0
 /*!
  * @brief Set RMII clock source.
  *
@@ -721,6 +722,7 @@ static inline void CLOCK_SetRmii0Clock(uint32_t src)
 {
     SIM->SOPT2 = ((SIM->SOPT2 & ~SIM_SOPT2_RMIISRC_MASK) | SIM_SOPT2_RMIISRC(src));
 }
+#endif
 
 /*!
  * @brief Set debug trace clock source.

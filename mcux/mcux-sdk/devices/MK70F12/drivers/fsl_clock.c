@@ -17,6 +17,22 @@
 #define FSL_COMPONENT_ID "platform.drivers.clock"
 #endif
 
+#if (!defined(MCG_C2_EREFS_MASK))
+#define MCG_C2_EREFS_MASK MCG_C2_EREFS0_MASK
+#endif
+
+#if (!defined(MCG_C2_RANGE_MASK))
+#define MCG_C2_RANGE_MASK MCG_C2_RANGE0_MASK
+#endif
+
+#if (!defined(MCG_C2_RANGE_SHIFT))
+#define MCG_C2_RANGE_SHIFT MCG_C2_RANGE0_SHIFT
+#endif
+
+#if (!defined(MCG_C2_RANGE))
+#define MCG_C2_RANGE MCG_C2_RANGE0
+#endif
+
 /* Macro definition remap workaround. */
 #if (defined(MCG_C2_EREFS_MASK) && !(defined(MCG_C2_EREFS0_MASK)))
 #define MCG_C2_EREFS0_MASK MCG_C2_EREFS_MASK
@@ -552,6 +568,7 @@ void CLOCK_SetSimConfig(sim_clock_config_t const *config)
     CLOCK_SetEr32kClock(config->er32kSrc);
 }
 
+#if 0
 /*! brief Enable USB FS clock.
  *
  * param src  USB FS clock source.
@@ -602,6 +619,7 @@ bool CLOCK_EnableUsbfs0Clock(clock_usb_src_t src, uint32_t freq)
     }
     return ret;
 }
+#endif
 
 /*!
  * brief Gets the MCG output clock (MCGOUTCLK) frequency.
@@ -1108,8 +1126,10 @@ void CLOCK_SetPll0MonitorMode(mcg_monitor_mode_t mode)
     {
         mcg_c8 = MCG->C8;
 
+        // TODO: should be w1c?
         mcg_c8 &= (uint8_t)(~MCG_C8_LOCS1_MASK);
-
+        //TODO: only int available on mk70?
+#if 0
         if (kMCG_MonitorInt == mode)
         {
             mcg_c8 &= (uint8_t)(~MCG_C8_LOLRE_MASK);
@@ -1118,6 +1138,7 @@ void CLOCK_SetPll0MonitorMode(mcg_monitor_mode_t mode)
         {
             mcg_c8 |= MCG_C8_LOLRE_MASK;
         }
+#endif
         MCG->C8 = mcg_c8;
         MCG->C6 |= MCG_C6_LOLIE0_MASK;
     }

@@ -83,7 +83,7 @@
 typedef enum IRQn {
    /* Auxiliary constants */
   NotAvail_IRQn                = -128,             /**< Not available device specific interrupt */
-  
+
   /* Core interrupts */
   NonMaskableInt_IRQn          = -14,              /**< Non Maskable Interrupt */
   HardFault_IRQn               = -13,              /**< Cortex-M4 SV Hard Fault Interrupt */
@@ -7157,7 +7157,7 @@ typedef struct {
   __IO uint8_t C4;                                 /**< MCG Control 4 Register, offset: 0x3 */
   __IO uint8_t C5;                                 /**< MCG Control 5 Register, offset: 0x4 */
   __IO uint8_t C6;                                 /**< MCG Control 6 Register, offset: 0x5 */
-  __I  uint8_t S;                                  /**< MCG Status Register, offset: 0x6 */
+  __IO uint8_t S;                                  /**< MCG Status Register, offset: 0x6 */
        uint8_t RESERVED_0[1];
   __IO uint8_t SC;                                 /**< MCG Status and Control Register, offset: 0x8 */
        uint8_t RESERVED_1[1];
@@ -7188,6 +7188,12 @@ typedef struct {
 #define MCG_C1_IRCLKEN_SHIFT                     1
 #define MCG_C1_IREFS_MASK                        0x4u
 #define MCG_C1_IREFS_SHIFT                       2
+/*! IREFS - Internal Reference Select
+ *  0b0..External reference clock is selected.
+ *  0b1..The slow internal reference clock is selected.
+ */
+#define MCG_C1_IREFS(x)                          (((uint8_t)(((uint8_t)(x)) << MCG_C1_IREFS_SHIFT)) & MCG_C1_IREFS_MASK)
+
 #define MCG_C1_FRDIV_MASK                        0x38u
 #define MCG_C1_FRDIV_SHIFT                       3
 #define MCG_C1_FRDIV(x)                          (((uint8_t)(((uint8_t)(x))<<MCG_C1_FRDIV_SHIFT))&MCG_C1_FRDIV_MASK)
@@ -7223,6 +7229,12 @@ typedef struct {
 #define MCG_C4_DRST_DRS(x)                       (((uint8_t)(((uint8_t)(x))<<MCG_C4_DRST_DRS_SHIFT))&MCG_C4_DRST_DRS_MASK)
 #define MCG_C4_DMX32_MASK                        0x80u
 #define MCG_C4_DMX32_SHIFT                       7
+/*! DMX32 - DCO Maximum Frequency with 32.768 kHz Reference
+ *  0b0..DCO has a default range of 25%.
+ *  0b1..DCO is fine-tuned for maximum frequency with 32.768 kHz reference.
+ */
+#define MCG_C4_DMX32(x)                          (((uint8_t)(((uint8_t)(x)) << MCG_C4_DMX32_SHIFT)) & MCG_C4_DMX32_MASK)
+
 /* C5 Bit Fields */
 #define MCG_C5_PRDIV0_MASK                       0x7u
 #define MCG_C5_PRDIV0_SHIFT                      0
@@ -7253,6 +7265,12 @@ typedef struct {
 #define MCG_S_CLKST(x)                           (((uint8_t)(((uint8_t)(x))<<MCG_S_CLKST_SHIFT))&MCG_S_CLKST_MASK)
 #define MCG_S_IREFST_MASK                        0x10u
 #define MCG_S_IREFST_SHIFT                       4
+/*! IREFST - Internal Reference Status
+ *  0b0..Source of FLL reference clock is the external reference clock.
+ *  0b1..Source of FLL reference clock is the internal reference clock.
+ */
+#define MCG_S_IREFST(x)                          (((uint8_t)(((uint8_t)(x)) << MCG_S_IREFST_SHIFT)) & MCG_S_IREFST_MASK)
+
 #define MCG_S_PLLST_MASK                         0x20u
 #define MCG_S_PLLST_SHIFT                        5
 #define MCG_S_LOCK0_MASK                         0x40u
@@ -7271,6 +7289,12 @@ typedef struct {
 #define MCG_SC_ATMF_SHIFT                        5
 #define MCG_SC_ATMS_MASK                         0x40u
 #define MCG_SC_ATMS_SHIFT                        6
+/*! ATMS - Automatic Trim Machine Select
+ *  0b0..32 kHz Internal Reference Clock selected.
+ *  0b1..4 MHz Internal Reference Clock selected.
+ */
+#define MCG_SC_ATMS(x)                           (((uint8_t)(((uint8_t)(x)) << MCG_SC_ATMS_SHIFT)) & MCG_SC_ATMS_MASK)
+
 #define MCG_SC_ATME_MASK                         0x80u
 #define MCG_SC_ATME_SHIFT                        7
 /* ATCVH Bit Fields */

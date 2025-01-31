@@ -7610,6 +7610,9 @@ typedef struct {
 #define SYSMPU_EAR_EADDR_MASK                       0xFFFFFFFFu
 #define SYSMPU_EAR_EADDR_SHIFT                      0
 #define SYSMPU_EAR_EADDR(x)                         (((uint32_t)(((uint32_t)(x))<<SYSMPU_EAR_EADDR_SHIFT))&SYSMPU_EAR_EADDR_MASK)
+/* The count of SYSMPU_EAR */
+#define SYSMPU_EAR_COUNT                         (5U)
+
 /* EDR Bit Fields */
 #define SYSMPU_EDR_ERW_MASK                         0x1u
 #define SYSMPU_EDR_ERW_SHIFT                        0

@@ -5899,6 +5899,12 @@ typedef struct {
 #define I2C_C1_DMAEN_SHIFT                       0
 #define I2C_C1_WUEN_MASK                         0x2u
 #define I2C_C1_WUEN_SHIFT                        1
+/*! WUEN - Wakeup Enable
+ *  0b0..Normal operation. No interrupt generated when address matching in low power mode.
+ *  0b1..Enables the wakeup function in low power mode.
+ */
+#define I2C_C1_WUEN(x)                           (((uint8_t)(((uint8_t)(x)) << I2C_C1_WUEN_SHIFT)) & I2C_C1_WUEN_MASK)
+
 #define I2C_C1_RSTA_MASK                         0x4u
 #define I2C_C1_RSTA_SHIFT                        2
 #define I2C_C1_TXAK_MASK                         0x8u
@@ -5909,8 +5915,20 @@ typedef struct {
 #define I2C_C1_MST_SHIFT                         5
 #define I2C_C1_IICIE_MASK                        0x40u
 #define I2C_C1_IICIE_SHIFT                       6
+/*! IICIE - I2C Interrupt Enable
+ *  0b0..Disabled
+ *  0b1..Enabled
+ */
+#define I2C_C1_IICIE(x)                          (((uint8_t)(((uint8_t)(x)) << I2C_C1_IICIE_SHIFT)) & I2C_C1_IICIE_MASK)
+
 #define I2C_C1_IICEN_MASK                        0x80u
 #define I2C_C1_IICEN_SHIFT                       7
+/*! IICEN - I2C Enable
+ *  0b0..Disabled
+ *  0b1..Enabled
+ */
+#define I2C_C1_IICEN(x)                          (((uint8_t)(((uint8_t)(x)) << I2C_C1_IICEN_SHIFT)) & I2C_C1_IICEN_MASK)
+
 /* S Bit Fields */
 #define I2C_S_RXAK_MASK                          0x1u
 #define I2C_S_RXAK_SHIFT                         0
@@ -5940,12 +5958,24 @@ typedef struct {
 #define I2C_C2_RMEN_SHIFT                        3
 #define I2C_C2_SBRC_MASK                         0x10u
 #define I2C_C2_SBRC_SHIFT                        4
+/*! SBRC - Slave Baud Rate Control
+ *  0b0..The slave baud rate follows the master baud rate and clock stretching may occur
+ *  0b1..Slave baud rate is independent of the master baud rate
+ */
+#define I2C_C2_SBRC(x)                           (((uint8_t)(((uint8_t)(x)) << I2C_C2_SBRC_SHIFT)) & I2C_C2_SBRC_MASK)
+
 #define I2C_C2_HDRS_MASK                         0x20u
 #define I2C_C2_HDRS_SHIFT                        5
 #define I2C_C2_ADEXT_MASK                        0x40u
 #define I2C_C2_ADEXT_SHIFT                       6
 #define I2C_C2_GCAEN_MASK                        0x80u
 #define I2C_C2_GCAEN_SHIFT                       7
+/*! GCAEN - General Call Address Enable
+ *  0b0..Disabled
+ *  0b1..Enabled
+ */
+#define I2C_C2_GCAEN(x)                          (((uint8_t)(((uint8_t)(x)) << I2C_C2_GCAEN_SHIFT)) & I2C_C2_GCAEN_MASK)
+
 /* FLT Bit Fields */
 #define I2C_FLT_FLT_MASK                         0x1Fu
 #define I2C_FLT_FLT_SHIFT                        0
@@ -5999,7 +6029,8 @@ typedef struct {
 /** Peripheral I2C1 base pointer */
 #define I2C1                                     ((I2C_Type *)I2C1_BASE)
 /** Array initializer of I2C peripheral base pointers */
-#define I2C_BASES                                { I2C0, I2C1 }
+#define I2C_BASE_PTRS                            { I2C0, I2C1 }
+#define I2C_IRQS                                 { I2C0_IRQn, I2C1_IRQn }
 
 /**
  * @}

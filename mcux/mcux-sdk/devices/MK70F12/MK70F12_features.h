@@ -781,13 +781,13 @@
 /* @brief Has DMA support (register bit C1[DMAEN]). */
 #define FSL_FEATURE_I2C_HAS_DMA_SUPPORT (1)
 /* @brief Has I2C bus start and stop detection (register bits FLT[SSIE], FLT[STARTF] and FLT[STOPF]). */
-#define FSL_FEATURE_I2C_HAS_START_STOP_DETECT (1)
+#define FSL_FEATURE_I2C_HAS_START_STOP_DETECT (0)
 /* @brief Has I2C bus stop detection (register bits FLT[STOPIE] and FLT[STOPF]). */
 #define FSL_FEATURE_I2C_HAS_STOP_DETECT (0)
 /* @brief Has I2C bus stop hold off (register bit FLT[SHEN]). */
-#define FSL_FEATURE_I2C_HAS_STOP_HOLD_OFF (1)
+#define FSL_FEATURE_I2C_HAS_STOP_HOLD_OFF (0)
 /* @brief Maximum width of the glitch filter in number of bus clocks. */
-#define FSL_FEATURE_I2C_MAX_GLITCH_FILTER_WIDTH (15)
+#define FSL_FEATURE_I2C_MAX_GLITCH_FILTER_WIDTH (31)
 /* @brief Has control of the drive capability of the I2C pins. */
 #define FSL_FEATURE_I2C_HAS_HIGH_DRIVE_SELECTION (1)
 /* @brief Has double buffering support (register S2). */
